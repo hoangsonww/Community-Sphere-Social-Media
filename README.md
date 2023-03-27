@@ -1,5 +1,5 @@
 # Community-Sphere-Social-Media
-HTML, JavaScript, and CSS
+HTML, JavaScript, and CSS:
 I am excited to unveil my latest project, CommuniSphere, a social media platform built to bring people closer together. As the only creator and lead developer of this project, I was responsible for designing and implementing the entire platform, including front-end and back-end development.
 
 CommuniSphere is a feature-rich platform that offers user account creation and profile customization, allowing users to upload avatars and set their bio. It also supports essential functionalities like creating and sharing posts, managing friends lists, and sending messages to other users. A seamless user experience is ensured through consistent design and intuitive navigation across all pages.
