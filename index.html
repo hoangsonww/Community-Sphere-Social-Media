@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CommunitySphere - Home</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+        <div class="button-container">
+            <button id="home-button" onclick="window.location.href = 'index.html'">Home</button>
+            <button id="login-link" onclick="window.location.href ='login.html'">Login</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Newsfeed</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+    <h1>Welcome to Our Newest Social Media Platform - CommunitySphere!</h1>
+
+    <p>
+        This is a sample social media platform website. Here, you can create an account, make new posts, and view user profiles.
+        More features to come, so stay tuned for them! Thank you for trying out Community Sphere!
+    </p>
+
+    <p>
+        Please           <u><a style="color: brown" href="register.html">register</a></u>for an account to start using our platform.
+    </p>
+
+    <section id="search-section">
+        <h2 style="color:brown;">Search Users</h2>
+        <input type="text" id="search-input" placeholder="Enter username" />
+        <button id="search-button">Search</button>
+        <ul id="search-results"></ul>
+    </section>
+
+    <div id="newsfeed">
+        <h2 style="color:brown;">Newsfeed</h2>
+    </div>
+
+    <form id="post-form">
+        <h2>Create a new post</h2>
+        <textarea id="post-content" placeholder="What's on your mind? You can also upload an image!"></textarea>
+        <button type="submit">Post</button>
+        <label for="post-image" style="color:brown">Image (optional):</label>
+        <input type="file" id="post-image" accept="image/*">
+    </form>
+
+    <div id="PostList">
+        <h2 style="color:brown;">Your Friends' Activities</h2>
+    </div>
+
+    <div id="post-list">
+        <!-- Posts will be added here dynamically -->
+    </div>
+
+    <section id="settings-section" style="display: none;">
+        <h2>Settings</h2>
+        <div>
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="post-comments">
+        <h4>Comments</h4>
+        <ul class="comments-list"></ul>
+        <input type="text" class="comment-input" placeholder="Write a comment..." />
+    </div>
+
+</main>
+
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme') || 'light';
+        applyTheme(theme);
+    });
+
+    function applyTheme(theme) {
+        const themedElements = document.querySelectorAll('body, header, nav, main, footer, #post-form, .post');
+        themedElements.forEach(element => {
+            if (theme === 'dark') {
+                element.classList.add('dark');
+            } else {
+                element.classList.remove('dark');
+            }
+        });
+    }
+</script>
+
+<script src="theme.js"></script>
+<script src="app.js"></script>
+<script src="messages.js"></script>
+<script src="reactions.js"></script>
+<script src="newsfeed.js"></script>
+<script src="posts.js"></script>
+
+</body>
+</html>

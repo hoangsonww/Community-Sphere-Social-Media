@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CommunitySphere - Messages</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="button-container">
+            <button id="home-button" onclick="window.location.href = 'index.html'">Home</button>
+            <button id="login-link" onclick="window.location.href ='login.html'">Login</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Newsfeed</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div id="chat-section">
+        <h2 style="color: brown">Chat</h2>
+        <ul id="message-list"></ul>
+        <div id="message-input-section">
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-message-button">Send</button>
+        </div>
+    </div>
+</main>
+
+<script src="messages.js"></script>
+
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme') || 'light';
+        applyTheme(theme);
+    });
+
+    function applyTheme(theme) {
+        const themedElements = document.querySelectorAll('body, header, nav, main, footer, #post-form, .post');
+        themedElements.forEach(element => {
+            if (theme === 'dark') {
+                element.classList.add('dark');
+            } else {
+                element.classList.remove('dark');
+            }
+        });
+    }
+</script>
+
+<script src="theme.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+/**
+ * General styles of the website
+ */
+
+/* Import custom fonts. Credits: Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+h2 {
+    color: #444;
+}
+
+#home-button {
+    background-color: #007bff;
+}
+
+#login-link {
+    background-color: #007bff;
+}
+
+a {
+    color: #ffe1e1;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #b600a1;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+nav li a:hover {
+    background-color: #48005d;
+}
+
+/* Main Content */
+main {
+    margin: 2rem auto;
+    width: 80%;
+}
+
+#post-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#post-content {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+#post-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#post-button:hover {
+    background-color: #66BB6A;
+}
+
+#post-list {
+    margin-top: 2rem;
+    background-color: #555555;
+    color: #ffffff;
+}
+
+/* Add custom styles for individual posts */
+.post {
+    background-color: #000000;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Normal theme */
+:root {
+    --bg-color: rgba(9, 9, 9, 0.92);
+    --text-color: #ffffff;
+}
+
+/* Bright theme */
+[data-theme="dark"] {
+    --bg-color: #ffffff;
+    --text-color: rgba(9, 9, 9, 0.92);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.post-likes {
+    display: flex;
+    align-items: center;
+}
+
+.like-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.like-button:hover {
+    background-color: #0056b3;
+}
+
+.like-count {
+    font-weight: bold;
+}
+
+/* Add these styles */
+#search-section {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 5px;
+}
+
+#search-results {
+    list-style: none;
+    padding: 0;
+}
+
+.search-result {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.search-result:hover {
+    text-decoration: underline;
+}
+
+.post-comments {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 5px;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-theme header {
+    background-color: #222;
+}
+
+body.dark-theme .post {
+    border-color: #555;
+}
+
+body.dark-theme .post-comments {
+    border-color: #555;
+}
+
+/* Add these styles */
+#login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+#login-button:hover {
+    background-color: #0056b3;
+}
+
+#login-container {
+    color: #0e0d0d;
+}
+
+/* Add styles for the login modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Add these styles */
+#login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    background-color: #fefefe;
+}
+
+/* Add these styles */
+#message-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#login-modal {
+    background-color: #0e0d0d;
+}
+
+#message-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#message-button:hover {
+    background-color: #0056b3;
+}
+
+.like-button:hover {
+    opacity: 0.5;
+}
+
+#login-link:hover {
+    opacity: 0.5;
+}
+
+#home-button:hover {
+    opacity: 0.5;
+}
+
+[data-theme="default"] {
+    --bg-color: #1a1a1a;
+    --text-color: #fff;
+}
+
+/* Bright (white) theme styles */
+[data-theme="bright"] {
+    --bg-color: #fff;
+    --text-color: #333;
+}
+
+/* Apply theme styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#chat-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#message-list li {
+    padding: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+#message-input-section {
+    display: flex;
+    gap: 10px;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.button-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056B3;
+}
+
+.reactions-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.reaction-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #888;
+    text-transform: capitalize;
+}
+
+.reaction-button:hover {
+    color: #333;
+}

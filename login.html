@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - CommunitySphere</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<header>
+
+    <nav>
+        <div class="button-container">
+            <button id="home-button" onclick="window.location.href = 'index.html'">Home</button>
+            <button id="login-link" onclick="window.location.href ='login.html'">Login</button>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Newsfeed</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+    <div id="login-container">
+        <h2>Login</h2>
+        <!-- Login Form -->
+        <div id="login-form">
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
+                <br>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
+    </div>
+
+    <div id="message-container">
+        <button id="message-button">Go to Messaging</button>
+    </div>
+
+</main>
+
+<script src="app.js"></script>
+<script src="messages.js"></script>
+<script src="profile.js"></script>
+<script src="friends.js"></script>
+<script src="posts.js"></script>
+<script src="newsfeed.js"></script>
+<script src="settings.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme') || 'light';
+        applyTheme(theme);
+    });
+
+    function applyTheme(theme) {
+        const themedElements = document.querySelectorAll('body, header, nav, main, footer, #post-form, .post');
+        themedElements.forEach(element => {
+            if (theme === 'dark') {
+                element.classList.add('dark');
+            } else {
+                element.classList.remove('dark');
+            }
+        });
+    }
+</script>
+
+<script src="theme.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

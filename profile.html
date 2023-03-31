@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CommunitySphere - User Profile</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="button-container">
+            <button id="home-button" onclick="window.location.href = 'index.html'">Home</button>
+            <button id="login-link" onclick="window.location.href ='login.html'">Login</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Newsfeed</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <div id="profile-container">
+
+        <div id="profile-header">
+            <img src="default-avatar.png" alt="User Avatar" id="user-avatar">
+            <h2 id="user-name">Username</h2>
+        </div>
+
+        <div id="profile-details">
+            <p><strong>Email:</strong> <span id="user-email">user@example.com</span></p>
+            <p><strong>Joined:</strong> <span id="user-joined">2023-03-27</span></p>
+        </div>
+
+    </div>
+
+    <form id="profile-form">
+        <div>
+            <label for="avatar-upload">Change avatar:</label>
+            <input type="file" id="avatar-upload" accept="image/*">
+        </div>
+        <div>
+            <label for="bio-input">Bio:</label>
+            <textarea id="bio-input"></textarea>
+        </div>
+        <button type="submit">Save Changes</button>
+    </form>
+
+</main>
+
+<script src="profile.js"></script>
+
+<script>
+    if (!localStorage.getItem('user')) {
+        alert('You need to register or log in to view your profile.');
+        window.location.href = 'register.html';
+    }
+</script>
+
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme') || 'light';
+        applyTheme(theme);
+    });
+
+    function applyTheme(theme) {
+        const themedElements = document.querySelectorAll('body, header, nav, main, footer, #post-form, .post');
+        themedElements.forEach(element => {
+            if (theme === 'dark') {
+                element.classList.add('dark');
+            } else {
+                element.classList.remove('dark');
+            }
+        });
+    }
+</script>
+
+<script src="theme.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

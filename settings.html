@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CommunitySphere - Settings</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="button-container">
+            <button id="home-button" onclick="window.location.href = 'index.html'">Home</button>
+            <button id="login-link" onclick="window.location.href ='login.html'">Login</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Newsfeed</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h1>Settings</h1>
+
+    <form id="settings-form">
+        <label for="theme-selector">Choose a Display Theme:</label>
+        <select id="theme-selector">
+            <option value="default">Default</option>
+            <option value="dark">Bright</option>
+        </select>
+        <button type="submit">Save</button>
+        <br>
+        <label for="display-name">Display Name:</label>
+        <input type="text" id="display-name" name="display-name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+</main>
+
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+</div>
+
+<script src="settings.js"></script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme') || 'light';
+        applyTheme(theme);
+    });
+
+    function applyTheme(theme) {
+        const themedElements = document.querySelectorAll('body, header, nav, main, footer, #post-form, .post');
+        themedElements.forEach(element => {
+            if (theme === 'default') {
+                element.classList.add('dark');
+            }
+            else {
+                element.classList.add('bright');
+            }
+        });
+    }
+</script>
+
+<script src="theme.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
