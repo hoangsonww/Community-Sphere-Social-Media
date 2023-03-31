@@ -18,6 +18,22 @@ function createPostElement(postContent) {
     contentElement.textContent = postContent;
     postElement.appendChild(contentElement);
 
+    // Add reaction buttons
+    const likeButton = document.createElement('button');
+    likeButton.textContent = 'Like';
+    likeButton.className = 'like-btn';
+    postElement.appendChild(likeButton);
+
+    const loveButton = document.createElement('button');
+    loveButton.textContent = 'Love';
+    loveButton.className = 'love-btn';
+    postElement.appendChild(loveButton);
+
+    const laughButton = document.createElement('button');
+    laughButton.textContent = 'Laugh';
+    laughButton.className = 'laugh-btn';
+    postElement.appendChild(laughButton);
+
     return postElement;
 }
 
