@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #000000;
+    color: var(--text-color);
 }
 
 h2 {
@@ -120,11 +121,6 @@ main {
     --text-color: rgba(9, 9, 9, 0.92);
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
 .post-likes {
     display: flex;
     align-items: center;
@@ -219,10 +215,6 @@ body.dark-theme .post-comments {
     background-color: #0056b3;
 }
 
-#login-container {
-    color: #0e0d0d;
-}
-
 /* Add styles for the login modal */
 .modal {
     display: none;
@@ -289,10 +281,6 @@ body.dark-theme .post-comments {
     background-color: #0056b3;
 }
 
-.like-button:hover {
-    opacity: 0.5;
-}
-
 #login-link:hover {
     opacity: 0.5;
 }
@@ -310,13 +298,6 @@ body.dark-theme .post-comments {
 [data-theme="bright"] {
     --bg-color: #fff;
     --text-color: #333;
-}
-
-/* Apply theme styles */
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
 #chat-section {

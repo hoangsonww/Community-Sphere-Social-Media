@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveSettings() {
         localStorage.setItem('theme', themeSelector.value);
         applyTheme(themeSelector.value);
-        const displayName = document.getElementById('display-name').value;
-        const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm-password').value;
         if (password !== confirmPassword) {
@@ -61,10 +59,3 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Your settings have been saved.');
     }
 });
-
-function changeTheme() {
-    const themeSelect = document.getElementById('theme-select');
-    const selectedTheme = themeSelect.value;
-
-    setTheme(selectedTheme);
-}
